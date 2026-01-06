@@ -29,6 +29,28 @@ $character
 # direnv, env_var, crytal, custom, sudo
 # jobs, status, container, shell
 
+scan_timeout = 50
+command_timeout = 1000
+palette = 'nord'
+
+[palettes.nord]
+nord0 = "#2E3440"  # used for background and area coloring
+nord1 = "#3B4252"  # used for elevated, more prominent or focused UI elements
+nord2 = "#434C5E"  # used to colorize the currently active text editor line as well as selection- and text highlighting
+nord3 = "#4C566A"  # used for UI elements like indent- and wrap guide marker
+nord4 = "#D8DEE9"  # used for UI elements like the text editor caret
+nord5 = "#E5E9F0"  # used for more subtle/inconspicuous UI text elements
+nord6 = "#ECEFF4"  # used for elevated UI text elements that require more visual attention
+nord7 = "#8FBCBB"  # used for UI elements that should, next to the primary accent color nord8, stand out and get more visual attention
+nord8 = "#88C0D0"  # used for primary UI elements with main usage purposes that require the most visual attention
+nord9 = "#81A1C1"  # used for secondary UI elements that also require more visual attention than other elements
+nord10 = "#5E81AC" # used for tertiary UI elements that require more visual attention than default elements
+nord11 = "#BF616A" # used for UI elements that are rendering error states like linter markers and the highlighting of Git diff deletions
+nord12 = "#D08770" # rarely used for UI elements, but it may indicate a more advanced or dangerous functionality
+nord13 = "#EBCB8B" # used for UI elements that are rendering warning states like linter markers and the highlighting of Git diff modifications
+nord14 = "#A3BE8C" # used for UI elements that are rendering success states and visualizations and the highlighting of Git diff additions
+nord15 = "#B48EAD" # rarely used for UI elements, but it may indicate a more uncommon functionality
+
 # GIT
 # ===
 
@@ -42,8 +64,14 @@ style = "fg:#2e3440 bg:#88c0d0"
 [git_state]
 
 [git_metrics]
+added_style = 'bg:nord0 fg:nord14'
+deleted_style = 'bg:nord0 fg:nord11'
+format = '[+$added ]($added_style)[-$deleted ]($deleted_style)'
+disabled = false
 
 [git_status]
+style = "fg:#2e3440 bg:#88c0d0"
+format = '[[($all_status$ahead_behind )](fg:#2e3440 bg:#88c0d0)]($style)'
 
 # LANGUAGES
 # =========
@@ -71,8 +99,62 @@ ssh_symbol = " "
 style = "fg:#2e3440 bg:#5e81ac"
 disabled = false
 
+#[os.symbols]
+#Arch = ' '
+
+# status
+[status]
+format = '[ $symbol ]($style)'
+style = "bold"
+symbol = '[](fg:nord11)'
+success_symbol = '[](fg:nord14)'
+not_executable_symbol = '[🛇](fg:nord11)'
+not_found_symbol = '[󰍉](fg:nord11)'
+sigint_symbol = '[](fg:nord13)'
+signal_symbol = '[](fg:nord11)'
+disabled = false
+
+# OS symbols
 [os.symbols]
+Alpaquita = ' '
+Alpine = ' '
+Amazon = ' '
+Android = ' '
 Arch = ' '
+Artix = ' '
+CentOS = ' '
+Debian = ' '
+DragonFly = ' '
+Emscripten = ' '
+EndeavourOS = ' '
+Fedora = ' '
+FreeBSD = ' '
+Garuda = '󰛓 '
+Gentoo = ' '
+HardenedBSD = '󰞌 '
+Illumos = '󰈸 '
+Linux = ' '
+Mabox = ' '
+Macos = ' '
+Manjaro = ' '
+Mariner = ' '
+MidnightBSD = ' '
+Mint = ' '
+NetBSD = ' '
+NixOS = ' '
+OpenBSD = '󰈺 '
+openSUSE = ' '
+OracleLinux = '󰌷 '
+Pop = ' '
+Raspbian = ' '
+Redhat = ' '
+RedHatEnterprise = ' '
+Redox = '󰀘 '
+Solus = '󰠳 '
+SUSE = ' '
+Ubuntu = ' '
+Unknown = ' '
+Windows = '󰍲 '
 
 [shell]
 disabled = false
@@ -83,10 +165,20 @@ format = '[$user]($style)'
 style_user = "fg:#2e3440 bg:#5e81ac"
 
 [directory]
+truncation_length = 1
+truncate_to_repo = true
+truncation_symbol = ''
 style = "fg:#2e3440 bg:#81a1c1"
 read_only = " "
 format = "[ 󰉋 $path ]($style)[$read_only]($read_only_style)"
 read_only_style = "fg:#2e3440 bold bg:#81a1c1"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+"Work" = " "
 
 [sudo]
 disabled = false
