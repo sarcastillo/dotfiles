@@ -1,0 +1,24 @@
+[general]
+import = ["themes/noctalia.toml"]
+
+general.import = [ "~/.config/omarchy/current/theme/alacritty.toml" ]
+
+[env]
+TERM = "alacritty"
+
+[font]
+normal = { family = "MesloLGL Nerd Font" }
+bold = { family = "MesloLGL Nerd Font" }
+italic = { family = "MesloLGL Nerd Font" }
+size = 9
+
+[window]
+padding.x = 14
+padding.y = 14
+decorations = "None"
+
+[keyboard]
+bindings = [
+{ key = "Insert", mods = "Shift", action = "Paste" },
+{ key = "Insert", mods = "Control", action = "Copy" }
+]
