@@ -1,6 +1,13 @@
 # If not running interactively, don't do anything (leave this at the top of this file)
 [[ $- != *i* ]] && return
 
+# Enable bash programmable completion features (must be loaded before Omarchy/fzf)
+if [ -f /usr/share/bash-completion/bash_completion ]; then
+	. /usr/share/bash-completion/bash_completion
+elif [ -f /etc/bash_completion ]; then
+	. /etc/bash_completion
+fi
+
 # All the default Omarchy aliases and functions
 # (don't mess with these directly, just overwrite them here!)
 source ~/.local/share/omarchy/default/bash/rc
@@ -25,12 +32,6 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
-# Enable bash programmable completion features in interactive shells
-#if [ -f /usr/share/bash-completion/bash_completion ]; then
-#	. /usr/share/bash-completion/bash_completion
-#elif [ -f /etc/bash_completion ]; then
-#	. /etc/bash_completion
-#fi
 
 #######################################################
 # EXPORTS
