@@ -36,8 +36,6 @@ bindd = SUPER, Q, Close active window, killactive
 
 
 
-
-
 # OKM bindings - added by OKM installer
 windowrulev2 = float, class:(com.mitchellh.ghostty)
 windowrulev2 = size 800 600, class:(com.mitchellh.ghostty)
