@@ -1,0 +1,25 @@
+[Default Applications]
+text/plain=dev.zed.Zed.desktop
+x-scheme-handler/http=userapp-Mercury-3CIGK3.desktop
+x-scheme-handler/https=userapp-Mercury-3CIGK3.desktop
+x-scheme-handler/chrome=userapp-Mercury-3CIGK3.desktop
+text/html=userapp-Mercury-3CIGK3.desktop
+application/x-extension-htm=userapp-Mercury-3CIGK3.desktop
+application/x-extension-html=userapp-Mercury-3CIGK3.desktop
+application/x-extension-shtml=userapp-Mercury-3CIGK3.desktop
+application/xhtml+xml=userapp-Mercury-3CIGK3.desktop
+application/x-extension-xhtml=userapp-Mercury-3CIGK3.desktop
+application/x-extension-xht=userapp-Mercury-3CIGK3.desktop
+
+[Added Associations]
+text/plain=nvim.desktop;dev.zed.Zed.desktop;
+x-scheme-handler/http=userapp-Mercury-3CIGK3.desktop;
+x-scheme-handler/https=userapp-Mercury-3CIGK3.desktop;
+x-scheme-handler/chrome=userapp-Mercury-3CIGK3.desktop;
+text/html=userapp-Mercury-3CIGK3.desktop;
+application/x-extension-htm=userapp-Mercury-3CIGK3.desktop;
+application/x-extension-html=userapp-Mercury-3CIGK3.desktop;
+application/x-extension-shtml=userapp-Mercury-3CIGK3.desktop;
+application/xhtml+xml=userapp-Mercury-3CIGK3.desktop;
+application/x-extension-xhtml=userapp-Mercury-3CIGK3.desktop;
+application/x-extension-xht=userapp-Mercury-3CIGK3.desktop;
